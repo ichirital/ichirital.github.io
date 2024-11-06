@@ -1,0 +1,232 @@
+/* CSS reset */
+html {
+    box-sizing: border-box;
+    font-family: "Source Sans 3", sans-serif;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  
+  /* containers  / elements hidden on mobile, they will be displayed on desktop only */
+  #mega-menu-title,
+  #mega-menu-links {
+    display: none;
+  }
+  
+  #nav-actions > h4 {
+    display: none;
+  }
+  
+  /* flex containers */
+  .links-container {
+    display: flex;
+    flex-direction: column; /* mobile-first */
+    border-top: 1px solid #e5e5e7;
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+  
+  #footer-credits {
+    display: flex;
+    flex-direction: column; /* mobile-first */
+    border-top: 1px solid #e5e5e7;
+    align-items: center;
+    margin-top: 8px;
+  }
+  
+  /* styling for mobile & desktop */
+  #flogo > img {
+    width: 100px;
+    padding-top: 30px;
+  }
+  
+  #nav-logo > img {
+    width: 100px;
+  }
+  
+  #nav-bar {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #nav-actions {
+    display: flex;
+    /* border: 2px solid green; */
+    align-items: center;
+  }
+  
+  #nav-menu {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .nav-item {
+    flex-grow: 1;
+  }
+  
+  footer p,
+  footer li,
+  header li,
+  footer a,
+  header p {
+    color: #545d63;
+    font-size: 0.8rem;
+    font-weight: 350;
+  }
+  
+  footer h4,
+  header h4 {
+    color: #545d63;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  
+  footer li,
+  header li {
+    list-style: none;
+  }
+  
+  footer ul,
+  header ul {
+    padding: 0;
+  }
+  
+  #social-icons > img {
+    height: 15px;
+    margin-right: 15px;
+  }
+  
+  #nav-actions > img {
+    height: 15px;
+    margin-right: 5px;
+    margin-left: 10px;
+  }
+  
+  #nav-hamburger,
+  #nav-logo {
+    align-content: center;
+  }
+  
+  #ftsncs > a {
+    margin-right: 10px;
+    margin-bottom: 5px;
+  }
+  
+  #nav-menu {
+    flex-direction: column;
+  }
+  
+  #nav-menu {
+    display: none;
+  }
+  
+  /* Attempting to display the menu when hovering over the hamburger on mobile */
+  /* @media (max-width: 575px) {
+    #nav-hamburger:hover + div + div {
+      display: flex;
+    }
+  } */
+  
+  /* Styling for desktop - 375 seems way too small for viewport - changed to 575, kept responsiveness! */
+  @media (min-width: 575px) {
+    body {
+      margin: 0px;
+    }
+  
+    .links-container {
+      flex-direction: row;
+      justify-content: space-between;
+      padding-left: 12.5%;
+      padding-right: 12.5%;
+    }
+  
+    .link-column {
+      flex-basis: 15%;
+    }
+  
+    #flinks-4 {
+      flex-basis: 30%;
+    }
+  
+    #footer-credits {
+      flex-direction: row;
+      justify-content: space-between;
+      padding-left: 12.5%;
+      padding-right: 12.5%;
+    }
+  
+    .fcredits {
+      flex-basis: 25%;
+    }
+  
+    #flogo {
+      order: 1;
+    }
+  
+    #fcopyright {
+      order: 2;
+      flex-basis: 55%;
+    }
+  
+    #ftsncs {
+      order: 3;
+      display: flex;
+      justify-content: right;
+    }
+  
+    #flogo > img {
+      padding-top: 0;
+    }
+  
+    .nav-item {
+      flex-basis: 25%;
+    }
+  
+    #mega-menu-title {
+      margin-left: 22.5%;
+    }
+  
+    #mega-menu > .links-container {
+      margin-left: 10%;
+    }
+  
+    #nav-menu {
+      display: flex;
+      flex-direction: row;
+      flex-basis: 45%;
+    }
+  
+    #nav-menu h4:first-child {
+      display: none;
+    }
+  
+    #nav-logo {
+      flex-basis: 20%;
+    }
+  
+    #nav-actions {
+      flex-basis: 30%;
+      justify-content: right;
+    }
+  
+    #nav-actions > h4 {
+      display: block;
+    }
+  
+    #nav-bar {
+      padding-left: 12.5%;
+      padding-right: 2.5%;
+    }
+  
+    #nav-bar:hover + div > div {
+      display: flex;
+    }
+  
+    #nav-hamburger {
+      display: none;
+    }
+  }
+  
