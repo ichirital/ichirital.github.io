@@ -78,7 +78,7 @@ html {
     flex-grow: 1;
   }
 
-  header {
+  #nav-bar {
     color: var(--white);
   }
 
@@ -86,17 +86,20 @@ html {
     color: var(--gray-d1);
   }
   
-  footer p,
+  /* footer p,
   footer li,
   header li,
   footer a,
-  header p {
+  header p  */
+  p,a,li {
     font-size: var(--default-font-size);
     font-weight: var(--regular-font-weight);
   }
   
-  footer h4,
-  header h4 {
+  /* footer h4,
+  header h4  */
+  
+  h4 {
     font-size: var(--default-font-size);
     font-weight: var(--bold-font-weight);
   }
