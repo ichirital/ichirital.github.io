@@ -18,6 +18,7 @@ html {
     --default-font-size: 0.8rem;
     --regular-font-weight: 350;
     --bold-font-weight: 500;
+    --gray-l1: #E5E5E7;
     
   }
 
@@ -237,5 +238,42 @@ html {
     #nav-hamburger {
       display: none;
     }
+
+    .hero {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .hero-content {
+      flex-basis: 50%;
+      background-color: var(--gray-l1);
+      border: 2px solid red;
+      justify-content: space-between;
+      padding-left: 6.75%;
+      padding-right: 12.5%;
+
+    }
+
+    .hero-image {
+      flex-basis: 50%;
+      background: url(files/chuko-cribb-l7IIOcTvAcs-unsplash.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top 25% center;
+      height: 50vh;
+    }
+
+    .hero-title {
+      font-family: "Source Serif 4", serif;
+      font-optical-sizing: auto;
+      font-weight: var(--bold-font-weight);
+      font-style: normal;
+      font-size: 2.5rem;
+      padding-top: 20%;
+      margin: 0;
+    }
+  
+
+
   }
   
