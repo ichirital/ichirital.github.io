@@ -93,9 +93,32 @@
 
     CATEGORY PAGE
 
-    <div id="products">
-      <ul id="product-list"></ul>
+    <div class="container">
+      Filters
+      <div class="filters">
+        Categories
+        <ul>
+          <li>Filter 1</li>
+          <li>Filter 2</li>
+          </ul>
+      </div>
+    
+      <div class="main-content">
+        <div class="results-header">
+          <span id="results-count"></span>
+          <select id="sort-by-dropdown">
+            <option value="">Sort by Price</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>   
+            </select>
+        </div>
+    
+        <div class="products">
+          <ul id="product-list"></ul>
+        </div>
+      </div>
     </div>
+
     
   </body>
   <footer>

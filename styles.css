@@ -289,6 +289,51 @@ html {
       border-radius: 8px;
       min-width: 150px;
     }
+
+    #product-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    
+    #product-list li {
+      border: 1px solid #ccc;
+      padding: 20px;
+      list-style: none;
+    }
+
+    #product-image {
+      width: 20vw;
+    }
+
+
+    
+    .container {
+      display: flex;
+    }
+    
+    .filters {
+      width: 20%;
+      padding: 20px;
+    }
+    
+    .main-content {
+      width: 80%;
+      padding: 20px;
+    }
+    
+    .results-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      border: 1px solid red;
+    }
+    
+    .products ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
   
   }
   
