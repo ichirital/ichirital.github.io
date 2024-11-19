@@ -307,7 +307,7 @@ html {
     }
 
 
-    
+
     .container {
       display: flex;
     }
@@ -334,6 +334,14 @@ html {
       padding: 0;
     }
 
-  
+    .filters ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .category-label {
+      text-transform: capitalize;
+    }
+
   }
   

@@ -1,5 +1,7 @@
-
 const BASE_URL = 'https://fakestoreapi.com/products'
+
+// keeping this globally, so we can have filtering, sorting and pagination
+let queryParams = {};
 
 function buildUrl(baseUrl, queryParams) {
     const url = new URL(baseUrl);
@@ -11,6 +13,7 @@ function buildUrl(baseUrl, queryParams) {
   
 document.addEventListener("DOMContentLoaded", (event) => {
     getProducts(BASE_URL, '')
+    getCategories(BASE_URL + "/categories", '')
 });
 
 function getProducts(baseUrl, queryParams) {
@@ -25,14 +28,26 @@ function getProducts(baseUrl, queryParams) {
         });
 }
 
-function resetProductsUI(productList) {
+function getCategories(baseUrl, queryParams) {
+    const finalUrl = buildUrl(baseUrl, queryParams)
+    console.log('Calling URL: ' + finalUrl)
+
+    fetch(finalUrl)
+        .then(res => res.json())
+        .then(json => displayCategories(json))
+        .catch((err) => {
+            console.log("Error - ", err)
+        });
+}
+
+function clearList(productList) {
     const liElements = productList.querySelectorAll("li")
     liElements.forEach(li => li.remove())
 }
 
 function displayProductList(products) {
     const productList = document.getElementById('product-list')
-    resetProductsUI(productList)
+    clearList(productList)
 
     let countResults = 0
     products.forEach(product => {
@@ -51,21 +66,28 @@ function displayProductList(products) {
       counter.textContent = countResults + ' Results'
     }
 
-//   https://fakestoreapi.com/products?sort=desc'
+function displayCategories(categories) {
+    const categoriesList = document.getElementById('categories-list')
+    clearList(categoriesList)
+    categories.forEach(category => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+            <input class="category-value" type="checkbox" name="${category}" onchange="filterByCategory(this)"><label class="category-label">${category}</label>
+          `;
+          categoriesList.appendChild(li);
+      });
+    }
+
+
 const sortByDropdown = document.getElementById('sort-by-dropdown')
 
 sortByDropdown.addEventListener("change", () => {
     const selectedValue = sortByDropdown.value
 
-    let queryParams = {}
-
     if (selectedValue === 'price-asc') {
         queryParams = {
             sort: 'asc'
-            // page: 2,
-            // pageSize: 10
         }
-        
     } else if (selectedValue === 'price-desc') {
         queryParams = {
             sort: 'desc'
@@ -77,3 +99,14 @@ sortByDropdown.addEventListener("change", () => {
     getProducts(BASE_URL, queryParams)
 });
 
+function filterByCategory(checkbox) {
+    let checkboxes = document.getElementsByClassName("category-value")
+    for (let i = 0; i < checkboxes.length; i++) {
+        if(checkboxes[i].checked) {
+            console.log(checkboxes[i].name + " selected")
+            getProducts(BASE_URL + "/category/" + checkboxes[i].name, queryParams)
+        }
+    }
+  }
+  
+  
