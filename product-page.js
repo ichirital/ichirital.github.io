@@ -32,65 +32,33 @@ function getProductDetails(baseUrl) {
  
 
 function displayProductDetails(product) {
+    const contentDiv = document.getElementById("content");
+    contentDiv.innerHTML = `
+        <div id="top-container">
+            <div id="product-image"><img src="${product.image}" alt="Image for product ${product.title}"></div>
+            <div id="product-details">
+                <h1>${product.title}</h1>
+                <p>$${product.price}</p>
+                <div class="rating"></div><p>(${product.rating.count})</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore et dolore magna. <a href="">Read more</a></p>
+                <span>Quantity</span>
+                <input type="number" value="1">
+                <input type="button" value="Add to cart">
+            </div>
+        </div>
 
-    console.log(product)
+        <div id="bottom-container">
+            <h2>${product.title}</h2>
+            <p><b>Description</b></p>
+            <p>${product.description}</p>
+        </div>
+        `;
 
-    // Vanilla JS Version (V4+)
+    $('.rating').raty({
+        score: product.rating.rate,
+        readOnly: true // Prevent user interaction
 
-// let rating = new Raty(document.querySelector('#rating'), {
-//     score: 3.5, // Initial rating
-//     readOnly: true // Prevent user interaction
-// });
+    });
 
-
-
-// jQuery Version (V3)
-
-$('.rating').raty({
-    score: 3, // Initial rating
-    readOnly: true // Prevent user interaction
-
-});
-
-
-    // document.getElementById("rating").raty({
-    //     score: 3.5, // Initial rating
-    //     readOnly: true // Prevent user interaction
-    //   });
-
-
-
-    // const productList = document.getElementById('product-list')
-    // let countResults = 0
-    // products.forEach(product => {
-    //     const li = document.createElement('li');
-    //     li.innerHTML = `
-    //       <img class="product-image" src="${product.image}" alt="Product Image">
-    //       <p><b>${product.title}</b></p>
-    //       <p>$${product.price}</p>
-    //       <img class="product-icons" src="files/heart.svg" alt="Add to Favorites Icon" />
-    //       <p><input type="hidden" value="${product.id}"></p>
-    //       `;
-    //     li.setAttribute("onclick","redirectToProductPage('" + product.id +"')")
-    //     productList.appendChild(li);
-    //     countResults++
-    //   });
-
-    //   let counter =  document.getElementById("results-count")
-    //   countResults += Number(counter.textContent)
-    //   counter.textContent = countResults
-
-
-            //output
-            // {
-            //     id:1,
-            //     title:'...',
-            //     price:'...',
-            //     category:'...',
-            //     description:'...',
-            //     image:'...'
-            // }
-
-
-    }
+}
  

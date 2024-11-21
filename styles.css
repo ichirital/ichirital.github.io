@@ -414,7 +414,6 @@ html {
     #top-container {
       display: flex;
       flex-direction: row; 
-      border: 2px solid red;
       margin-left: 15%;
       margin-right: 15%;
     }
@@ -422,7 +421,6 @@ html {
     #bottom-container {
       margin-left: 15%;
       margin-right: 15%;
-      border: 2px solid blue;
     }
   
     #product-image, #product-details {
@@ -430,7 +428,13 @@ html {
     }
 
     #product-image {
-      padding-right: 20px;
+      margin-right: 5%;
+      display: flex;
+      justify-content:right;
+    }
+
+    #product-image > img {
+      width: 25vw;
     }
 
     h1, h2 {
