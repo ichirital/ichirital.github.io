@@ -56,10 +56,11 @@ function displayProductList(products) {
     products.forEach(product => {
         const li = document.createElement('li');
         li.innerHTML = `
-          <img id="product-image" src="${product.image}" alt="Product Image">
-          <p><b><span id="product-title">${product.title}</span></b></p>
-          <p><span id="product-price">$${product.price}</span></p>
-          <p><input type="hidden" id="product-id" value="${product.id}"></p>
+          <img class="product-image" src="${product.image}" alt="Product Image">
+          <p><b>${product.title}</b></p>
+          <p>$${product.price}</p>
+          <img class="product-icons" src="files/heart.svg" alt="Add to Favorites Icon" />
+          <p><input type="hidden" value="${product.id}"></p>
           `;
         productList.appendChild(li);
         countResults++
