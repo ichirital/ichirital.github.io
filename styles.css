@@ -15,11 +15,11 @@ html {
     --primary-bg-color: #1363DF;
     --white: #FFFFFF;
     --gray-d1: #535965;
+    --gray-d2: #1B252C;
     --default-font-size: 0.8rem;
     --regular-font-weight: 350;
     --bold-font-weight: 500;
     --gray-l1: #E5E5E7;
-    
   }
 
   /* containers  / elements hidden on mobile, they will be displayed on desktop only */
@@ -263,6 +263,26 @@ html {
       height: 50vh;
     }
 
+    .hero-category-content {
+      flex-basis: 25%;
+      background-color: var(--gray-d2);
+      
+      justify-content: space-between;
+      padding-left: 10%;
+      padding-right: 10%;
+      color: white;
+      text-align: center;
+    }
+
+    .hero-category-image {
+      flex-basis: 75%;
+      background: url(files/brandon-webb-GNPCqlUex8U-unsplash-scaled.webp);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top 30% center;
+      height: 30vh;
+    }
+
     .hero-title {
       font-family: "Source Serif 4", serif;
       font-optical-sizing: auto;
@@ -271,6 +291,7 @@ html {
       font-size: 2.5rem;
       padding-top: 20%;
       margin: 0;
+      border-bottom: .1em solid var(--primary-bg-color);
     }
 
     .hero-button {
@@ -312,14 +333,14 @@ html {
       display: flex;
     }
     
-    .filters {
+    .left-nav {
       width: 20%;
-      padding: 20px;
+      padding-left: 7.5%;
     }
-    
+
     .main-content {
       width: 80%;
-      padding: 20px;
+      padding-right: 7.5%;
     }
     
     .results-header {
@@ -334,9 +355,22 @@ html {
       padding: 0;
     }
 
+    .filters::before, .filters::after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 80%;
+      background-color: var(--gray-l1);
+      margin-bottom: 10px; /* Adjust the margin as needed */
+    }
+
     .filters ul {
       list-style-type: none;
       padding: 0;
+    }
+
+    .filters ul li {
+      margin-bottom: 10px;
     }
 
     .category-label {

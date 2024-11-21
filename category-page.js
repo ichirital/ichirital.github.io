@@ -12,6 +12,7 @@ function buildUrl(baseUrl, queryParams) {
   }
   
 document.addEventListener("DOMContentLoaded", (event) => {
+    clearList(document.getElementById('product-list'))
     getProducts(BASE_URL, '')
     getCategories(BASE_URL + "/categories", '')
 });
@@ -43,11 +44,13 @@ function getCategories(baseUrl, queryParams) {
 function clearList(productList) {
     const liElements = productList.querySelectorAll("li")
     liElements.forEach(li => li.remove())
+
+    let counter =  document.getElementById("results-count")
+    counter.textContent = '0'
 }
 
 function displayProductList(products) {
     const productList = document.getElementById('product-list')
-    clearList(productList)
 
     let countResults = 0
     products.forEach(product => {
@@ -63,7 +66,8 @@ function displayProductList(products) {
       });
 
       let counter =  document.getElementById("results-count")
-      counter.textContent = countResults + ' Results'
+      countResults += Number(counter.textContent)
+      counter.textContent = countResults
     }
 
 function displayCategories(categories) {
@@ -72,7 +76,7 @@ function displayCategories(categories) {
     categories.forEach(category => {
         const li = document.createElement('li');
         li.innerHTML = `
-            <input class="category-value" type="checkbox" name="${category}" onchange="filterByCategory(this)"><label class="category-label">${category}</label>
+            <input class="category-value" type="checkbox" name="${category}" onchange="filterByCategory()"><label class="category-label">${category}</label>
           `;
           categoriesList.appendChild(li);
       });
@@ -80,7 +84,6 @@ function displayCategories(categories) {
 
 
 const sortByDropdown = document.getElementById('sort-by-dropdown')
-
 sortByDropdown.addEventListener("change", () => {
     const selectedValue = sortByDropdown.value
 
@@ -96,14 +99,15 @@ sortByDropdown.addEventListener("change", () => {
         // null value, do nothing
     }
 
-    getProducts(BASE_URL, queryParams)
+    // need to check if any filters are also selected
+    filterByCategory()
 });
 
-function filterByCategory(checkbox) {
+function filterByCategory() {
+    clearList(document.getElementById('product-list'))
     let checkboxes = document.getElementsByClassName("category-value")
     for (let i = 0; i < checkboxes.length; i++) {
         if(checkboxes[i].checked) {
-            console.log(checkboxes[i].name + " selected")
             getProducts(BASE_URL + "/category/" + checkboxes[i].name, queryParams)
         }
     }
