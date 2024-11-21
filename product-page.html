@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
+    <!-- external library for product ratings-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/raty-js/lib/jquery.raty.css"></script>
   </head>
 
   <header>
@@ -91,42 +93,32 @@
   </header>
   <body>
 
-    <section class="hero">
-      <div class="hero-category-content">
-        <h1 class="hero-title">
-          Men's Outerwear
-        </h1>
-      </div>
-      <div class="hero-category-image"></div>
-    </section>
 
-    <div class="container">
-
-      <div class="left-nav">
-        <p class="breadcrumb">Clothing / Mens / Outerwear</p>
-        <p style="font-size: 1.1em">Filters</p>
-        <div class="filters">
-          <p style="font-size: 1.02em">Categories</p>
-          <ul id="categories-list">
-          </ul>
+      <div id="top-container">
+        <div id="product-image">
+          <img src="https://img.freepik.com/free-vector/white-product-podium-with-green-tropical-palm-leaves-golden-round-arch-green-wall_87521-3023.jpg" alt="Product Image">
         </div>
+
+        <div id="product-details">
+          <h1>BIYLACLESEN Women’s 3-in-1 Snowboard Jacket Winter Coats</h1>
+          <p>$99.99</p>
+          <div class="rating"></div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore et dolore magna. <a href="">Read more</a></p>
+          <span>Quantity</span>
+          <input type="number" value="1">
+          <input type="button" value="Add to cart">
+      </div>
       </div>
 
-      <div class="main-content">
-        <div class="results-header">
-          <div><span id="results-count"></span><span> Results</span></div>
-          <select id="sort-by-dropdown">
-            <option value="">Sort by Price</option>
-            <option value="price-asc">Price: Low to High</option>
-            <option value="price-desc">Price: High to Low</option>   
-            </select>
-        </div>
-    
-        <div class="products">
-          <ul id="product-list"></ul>
-        </div>
+      <div id="bottom-container">
+          <h2>BIYLACLESEN Women’s 3-in-1 Snowboard Jacket Winter Coats</h2>
+          <p><b>Description</b></p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore dolore magna lorem ipsum dolor sit amet ipsum 
+            dolor sit amet, consectetur. Duis tristique sollicitudin nibh sit amet. Tellus integer feugiat scelerisque varius morbi enim nunc faucibus. 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore dolore magna lorem ipsum dolor sit amet ipsum dolor 
+            sit amet, consectetur. Duis tristique sollicitudin nibh sit amet. Tellus integer feugiat scelerisque varius morbi enim nunc faucibus.</p>
       </div>
-    </div>
+          
 
   </body>
   <footer>
@@ -181,6 +173,9 @@
     </div>
   </footer>
 
-  <script type="text/javascript" src="category-page.js"></script>
+   <!-- external library for product ratings-->
+   <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/raty-js/lib/jquery.raty.min.js"></script>
+   <script type="text/javascript" src="product-page.js"></script>
 </html>
 

@@ -10,7 +10,7 @@ function buildUrl(baseUrl, queryParams) {
     }
     return url.toString();   
   }
-  
+
 document.addEventListener("DOMContentLoaded", (event) => {
     clearList(document.getElementById('product-list'))
     getProducts(BASE_URL, '')
@@ -51,7 +51,6 @@ function clearList(productList) {
 
 function displayProductList(products) {
     const productList = document.getElementById('product-list')
-
     let countResults = 0
     products.forEach(product => {
         const li = document.createElement('li');
@@ -62,6 +61,7 @@ function displayProductList(products) {
           <img class="product-icons" src="files/heart.svg" alt="Add to Favorites Icon" />
           <p><input type="hidden" value="${product.id}"></p>
           `;
+        li.setAttribute("onclick","redirectToProductPage('" + product.id +"')")
         productList.appendChild(li);
         countResults++
       });
@@ -113,5 +113,10 @@ function filterByCategory() {
         }
     }
   }
-  
-  
+
+function redirectToProductPage(productId) {
+    const finalUrl = BASE_URL + "/" + productId
+    console.log('Calling URL: ' + finalUrl)
+    window.location.href = "../product-page.html?id=" + productId
+}
+

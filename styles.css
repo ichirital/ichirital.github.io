@@ -399,7 +399,50 @@ html {
       padding: 5px;
       color: var(--gray-d1);
       background-color: white;
-      /* color: #888; Grey text color */
+    }
+
+    .rating i {
+      color: #ddd;
+      font-size: 24px;
+    }
+    
+    .rating i.fa-star:before,
+    .rating i.fa-star-half-alt:before {
+      color: #f0c14b;
+    }
+
+    #top-container {
+      display: flex;
+      flex-direction: row; 
+      border: 2px solid red;
+      margin-left: 15%;
+      margin-right: 15%;
+    }
+
+    #bottom-container {
+      margin-left: 15%;
+      margin-right: 15%;
+      border: 2px solid blue;
+    }
+  
+    #product-image, #product-details {
+        flex: 1;
+    }
+
+    #product-image {
+      padding-right: 20px;
+    }
+
+    h1, h2 {
+      font-family: "Source Serif 4", serif;
+      font-optical-sizing: auto;
+      font-weight: var(--bold-font-weight);
+      font-style: normal;
+      font-size: 1.8rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
     }
 
   }
