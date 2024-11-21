@@ -56,7 +56,7 @@ function displayProductList(products) {
         const li = document.createElement('li');
         li.innerHTML = `
           <img class="product-image" src="${product.image}" alt="Product Image">
-          <p><b>${product.title}</b></p>
+          <p><strong>${product.title}</strong></p>
           <p>$${product.price}</p>
           <img class="product-icons" src="files/heart.svg" alt="Add to Favorites Icon" />
           <p><input type="hidden" value="${product.id}"></p>

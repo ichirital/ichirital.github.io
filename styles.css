@@ -449,5 +449,30 @@ html {
       font-size: 1.5rem;
     }
 
+    .input-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .input-group button {
+      border: 2px solid var(--gray-l1);
+      background-color: #f0f0f0;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 18px;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    .input-group input {
+      border-radius: 5px; /* Adjust the radius as needed */
+      border: 1.5px solid #ccc;
+      padding: 5px;
+      color: var(--gray-d1);
+      background-color: white;
+      width: 50px;
+    }
+
   }
   

@@ -41,15 +41,22 @@ function displayProductDetails(product) {
                 <p>$${product.price}</p>
                 <div class="rating"></div><p>(${product.rating.count})</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore et dolore magna. <a href="">Read more</a></p>
-                <span>Quantity</span>
-                <input type="number" value="1">
-                <input type="button" value="Add to cart">
+                <p><strong>Quantity<strong></p>
+                
+
+                <div class="input-group">
+                <button type="button" class="decrement">-</button>
+                <input type="number" value="1" min="1">
+                <button type="button" class="increment">+</button>
+                </div>
+
+                <button type="button" class="hero-button">Add to cart</button>
             </div>
         </div>
 
         <div id="bottom-container">
             <h2>${product.title}</h2>
-            <p><b>Description</b></p>
+            <p><strong>Description</strong></p>
             <p>${product.description}</p>
         </div>
         `;
